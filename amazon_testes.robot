@@ -23,4 +23,11 @@ Casos de teste 02 - Pesquisa de um produto
      Adicione o terceiro produto no carrinho
      Valide se o valor total do carrinho está correto
 
-
+Caso de teste 03 - Criar Conta
+     [Documentation]  Esse teste cria uma conta na amazon
+     [Tags]  Regressivo  Account
+     Acesse a Amazon
+     Acessar criação de conta
+     Preencher o Nome
+     Preencher o Email 
+     Preencher a senha e confirmação

@@ -4,6 +4,10 @@
 
 Sera necessario instalar o Python e RobotFramework
 ´´´https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installation-instructions´´´
+
+A Library de Faker tambem será necessaria
+´´pip install robotframework-faker
+
  
 ### Tags: 
 

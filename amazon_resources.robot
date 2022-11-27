@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     create tests
 Library    SeleniumLibrary
-# Library    Selenium2Library
+Library    FakerLibrary
 
 *** Variables ***
 ${URL}                 http://www.amazon.com.br
@@ -16,7 +16,13 @@ ${Carrinho}            //input[contains(@name,'submit.add-to-cart')]
 ${Check_Carrinho}      //span[contains(.,'Adicionado ao carrinho')]
 ${Total_Carrinho}      id="nav-cart-count" 
 ${Ir_ao_Carrinho}      //a[@href='/gp/cart/view.html?ref_=sw_gtc']
-${Check_Valor}          
+${Create_Account}      (//a[contains(@data-nav-ref,'signin')])[1]  
+${Botton_Create}       //a[contains(.,'Criar sua conta da Amazon')]
+${NOME_USUARIO}        Usuario Novo 
+${CAMPO_NOME}          //input[@type='text'][contains(@id,'name')]
+${CAMPO_EMAIL}         //input[@type='email'][contains(@id,'email')]
+${CAMPO_SENHA}         //input[@name='password']
+${CAMPO_EMAIL02}       //input[@type='password'][contains(@id,'check')]
 
 
 *** Keywords ***
@@ -52,4 +58,19 @@ Valide se o valor total do carrinho está correto
    # Essa parte não ficou clara pra mim, se era pra validar o valor do produto, ou quantidade de itens 
    Page Should Contain               Subtotal (1 item)     
    
-
+Acessar criação de conta
+    Click Element                    ${Create_Account}
+    Wait Until Element Is Visible    ${Botton_Create}
+    Click Element                    ${Botton_Create}
+Preencher o Nome
+    Wait Until Element Is Enabled    ${CAMPO_NOME}
+    Input Text                       ${CAMPO_NOME}   ${NOME_USUARIO}
+Preencher o Email
+    Wait Until Element Is Enabled   ${CAMPO_EMAIL}
+    ${EMAIL_USUARIO}=               FakerLibrary.Email
+    Input Text                      ${CAMPO_EMAIL}   ${EMAIL_USUARIO}
+Preencher a senha e confirmação
+    Wait Until Element Is Enabled   ${CAMPO_SENHA}
+    ${SENHA_USUARIO}=               FakerLibrary.Password   8   True
+    Input Password                  ${CAMPO_SENHA}     ${SENHA_USUARIO}
+    Input Password                  ${CAMPO_EMAIL02}   ${SENHA_USUARIO}
