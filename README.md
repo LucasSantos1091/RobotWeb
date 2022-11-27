@@ -3,16 +3,28 @@
 ## Inicio
 
 Sera necessario instalar o Python e RobotFramework
-´´´https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installation-instructions´´´
+```sh
+https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html#installation-instructions
+```
+Tambem será necessario a Library de Faker
+```sh
+pip install robotframework-faker
+```
 
-A Library de Faker tambem será necessaria
-´´pip install robotframework-faker
+## Cenários
 
- 
-### Tags: 
+- Fazer uma pesquisa na amazom de algum produto e adicionar ele no carrinho, após isso verificar se o mesmo foi inserido no carrinho.
+- Fazer uma pesquisa na amazom de algum produto e adicionar o terceiro produto da lista no carrinho, após isso verificar se o mesmo foi inserido no carrinho e se a quantidade está correta
+
+## Tags: 
 
 Executar os 2 cenários
-´´´robot -i Regressivo .\amazon_testes.robot´´´ 
+```sh
+robot -i Regressivo .\amazon_testes.robot  
+```
 
 Executar cenários separados:
-´´´robot -i "@Tags" .\amazon_testes.robot´´´ 
+
+```sh
+robot -i "@Tags" .\amazon_testes.robot
+```
