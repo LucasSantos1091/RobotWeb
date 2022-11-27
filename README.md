@@ -8,7 +8,7 @@ Sera necessario instalar o Python e RobotFramework
 ### Tags: 
 
 Executar os 2 cenários
-´´´robot -i Regressivo .\amazon_testes.robot´´´ 
+''' robot -i Regressivo .\amazon_testes.robot ''' 
 
 Executar cenários separados:
-´´´robot -i "@Tags" .\amazon_testes.robot´´´ 
+''' robot -i "@Tags" .\amazon_testes.robot '''
