@@ -20,11 +20,11 @@ pip install robotframework-faker
 
 Executar os 2 cenários
 ```sh
-robot -i Regressivo .\amazon_testes.robot  
+robot -d .\results Regressivo .\amazon_testes.robot  
 ```
 
 Executar cenários separados:
 
 ```sh
-robot -i "@Tags" .\amazon_testes.robot
+robot -d .\results  "@Tags" .\amazon_testes.robot
 ```
